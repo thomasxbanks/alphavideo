@@ -9,40 +9,40 @@
 
 <body>
     <header id="masthead">
-      <nav>
-        <ul class="list--hz">
-          <li>Lorem.</li>
-          <li>Adipisci?</li>
-          <li>Dolor.</li>
-          <li>Officia.</li>
-          <li>Hic.</li>
-        </ul>
-      </nav>
-      <nav>
-        <ul class="list--hz">
-          <li>
-            <h4>Lorem.</h4>
-          </li>
-          <li>
-            <h4>Nobis?</h4>
-          </li>
-          <li>
-            <h4>Dignissimos.</h4>
-          </li>
-          <li>
-            <h1>LOGO</h1>
-          </li>
-          <li>
-            <h4>Magni.</h4>
-          </li>
-          <li>
-            <h4>Eligendi.</h4>
-          </li>
-          <li>
-            <h4>Officia!</h4>
-          </li>
-        </ul>
-      </nav>
+        <nav>
+            <ul class="list--hz">
+                <li>Lorem.</li>
+                <li>Adipisci?</li>
+                <li>Dolor.</li>
+                <li>Officia.</li>
+                <li>Hic.</li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="list--hz">
+                <li>
+                    <h4>Lorem.</h4>
+                </li>
+                <li>
+                    <h4>Nobis?</h4>
+                </li>
+                <li>
+                    <h4>Dignissimos.</h4>
+                </li>
+                <li>
+                    <h1>LOGO</h1>
+                </li>
+                <li>
+                    <h4>Magni.</h4>
+                </li>
+                <li>
+                    <h4>Eligendi.</h4>
+                </li>
+                <li>
+                    <h4>Officia!</h4>
+                </li>
+            </ul>
+        </nav>
     </header>
     <video id="video" autoplay>
       <source src="inverted.mp4"></source>
@@ -50,14 +50,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="jquery-seeThru.min.js"></script>
     <script>
-      $(document).ready(function(){
-        jQuery('#video').seeThru({
-            start: 'autoplay',
-            end: function(){
-              alert('stop')
+        $(document).ready(function() {
+            jQuery('#video').seeThru({
+                start: 'autoplay',
+                end: 'stop'
+            })
+            document.getElementById('video').addEventListener('ended', myHandler, false);
+
+            function myHandler(e) {
+                jQuery('canvas, video').remove()
             }
         })
-      })
     </script>
 </body>
 
